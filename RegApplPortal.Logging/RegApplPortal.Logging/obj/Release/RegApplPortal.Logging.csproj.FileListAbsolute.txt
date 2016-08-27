@@ -1,0 +1,17 @@
+c:\VS\RegApplPortal\RegApplPortal.Logging\RegApplPortal.Logging\bin\Release\RegApplPortal.Log.dll
+c:\VS\RegApplPortal\RegApplPortal.Logging\RegApplPortal.Logging\bin\Release\RegApplPortal.Log.pdb
+c:\VS\RegApplPortal\RegApplPortal.Logging\RegApplPortal.Logging\bin\Release\log4net.dll
+c:\VS\RegApplPortal\RegApplPortal.Logging\RegApplPortal.Logging\bin\Release\RegApplPortal.BusinessLogic.dll
+c:\VS\RegApplPortal\RegApplPortal.Logging\RegApplPortal.Logging\bin\Release\RegApplPortal.Configuration.dll
+c:\VS\RegApplPortal\RegApplPortal.Logging\RegApplPortal.Logging\bin\Release\RegApplPortal.Entities.dll
+c:\VS\RegApplPortal\RegApplPortal.Logging\RegApplPortal.Logging\bin\Release\RegApplPortal.Interfaces.dll
+c:\VS\RegApplPortal\RegApplPortal.Logging\RegApplPortal.Logging\bin\Release\RegApplPortal.DataAccess.dll
+c:\VS\RegApplPortal\RegApplPortal.Logging\RegApplPortal.Logging\bin\Release\RegApplPortal.BusinessLogic.pdb
+c:\VS\RegApplPortal\RegApplPortal.Logging\RegApplPortal.Logging\bin\Release\RegApplPortal.Configuration.pdb
+c:\VS\RegApplPortal\RegApplPortal.Logging\RegApplPortal.Logging\bin\Release\RegApplPortal.Entities.pdb
+c:\VS\RegApplPortal\RegApplPortal.Logging\RegApplPortal.Logging\bin\Release\log4net.xml
+c:\VS\RegApplPortal\RegApplPortal.Logging\RegApplPortal.Logging\bin\Release\RegApplPortal.Interfaces.pdb
+c:\VS\RegApplPortal\RegApplPortal.Logging\RegApplPortal.Logging\bin\Release\RegApplPortal.DataAccess.pdb
+c:\VS\RegApplPortal\RegApplPortal.Logging\RegApplPortal.Logging\obj\Release\RegApplPortal.Logging.csprojResolveAssemblyReference.cache
+c:\VS\RegApplPortal\RegApplPortal.Logging\RegApplPortal.Logging\obj\Release\RegApplPortal.Log.dll
+c:\VS\RegApplPortal\RegApplPortal.Logging\RegApplPortal.Logging\obj\Release\RegApplPortal.Log.pdb
