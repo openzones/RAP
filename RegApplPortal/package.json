@@ -1,0 +1,28 @@
+{
+	"version": "1.0.0",
+	"name": "template",
+	"private": true,
+	"preferGlobal": true,
+	"author": "Vitaly Kovalyuk",
+	"description": "b2b login project",
+	"devDependencies": {
+		"gulp": "3.9.0",
+		"karma": "^0.13.0",
+		"karma-jasmine": "^0.3.6",
+		"gulp-bower": "^0.0.10",
+		"gulp-concat": "^2.6.0",
+		"gulp-karma": "^0.0.1",
+		"gulp-clean": "^0.3.1",
+		"gulp-replace": "^0.5.4"
+	},
+	"bin": {
+		"package-name": "./bin/package-name"
+	},
+	"dependencies": {
+	},
+	"analyze": false,
+	"license": "MIT",
+	 "engines": {
+    "node": ">=0.6"
+	}
+}
