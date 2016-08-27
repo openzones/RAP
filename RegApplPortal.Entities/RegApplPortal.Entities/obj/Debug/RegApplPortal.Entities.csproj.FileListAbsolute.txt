@@ -1,0 +1,9 @@
+e:\RegApplPortal\RegApplPortal.Entities\RegApplPortal.Entities\bin\Debug\RegApplPortal.Entities.dll
+e:\RegApplPortal\RegApplPortal.Entities\RegApplPortal.Entities\bin\Debug\RegApplPortal.Entities.pdb
+e:\RegApplPortal\RegApplPortal.Entities\RegApplPortal.Entities\obj\Debug\RegApplPortal.Entities.dll
+e:\RegApplPortal\RegApplPortal.Entities\RegApplPortal.Entities\obj\Debug\RegApplPortal.Entities.pdb
+c:\VS\RegApplPortal\RegApplPortal.Entities\RegApplPortal.Entities\bin\Debug\RegApplPortal.Entities.dll
+c:\VS\RegApplPortal\RegApplPortal.Entities\RegApplPortal.Entities\bin\Debug\RegApplPortal.Entities.pdb
+c:\VS\RegApplPortal\RegApplPortal.Entities\RegApplPortal.Entities\obj\Debug\RegApplPortal.Entities.dll
+c:\VS\RegApplPortal\RegApplPortal.Entities\RegApplPortal.Entities\obj\Debug\RegApplPortal.Entities.pdb
+C:\VS\RegApplPortal\RegApplPortal.Entities\RegApplPortal.Entities\obj\Debug\RegApplPortal.Entities.csprojResolveAssemblyReference.cache

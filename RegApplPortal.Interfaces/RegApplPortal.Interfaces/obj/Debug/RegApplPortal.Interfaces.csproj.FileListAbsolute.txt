@@ -1,0 +1,14 @@
+e:\RegApplPortal\RegApplPortal.Interfaces\RegApplPortal.Interfaces\bin\Debug\RegApplPortal.Interfaces.dll
+e:\RegApplPortal\RegApplPortal.Interfaces\RegApplPortal.Interfaces\bin\Debug\RegApplPortal.Interfaces.pdb
+e:\RegApplPortal\RegApplPortal.Interfaces\RegApplPortal.Interfaces\bin\Debug\RegApplPortal.Entities.dll
+e:\RegApplPortal\RegApplPortal.Interfaces\RegApplPortal.Interfaces\bin\Debug\RegApplPortal.Entities.pdb
+e:\RegApplPortal\RegApplPortal.Interfaces\RegApplPortal.Interfaces\obj\Debug\RegApplPortal.Interfaces.csprojResolveAssemblyReference.cache
+e:\RegApplPortal\RegApplPortal.Interfaces\RegApplPortal.Interfaces\obj\Debug\RegApplPortal.Interfaces.dll
+e:\RegApplPortal\RegApplPortal.Interfaces\RegApplPortal.Interfaces\obj\Debug\RegApplPortal.Interfaces.pdb
+c:\VS\RegApplPortal\RegApplPortal.Interfaces\RegApplPortal.Interfaces\bin\Debug\RegApplPortal.Interfaces.dll
+c:\VS\RegApplPortal\RegApplPortal.Interfaces\RegApplPortal.Interfaces\bin\Debug\RegApplPortal.Interfaces.pdb
+c:\VS\RegApplPortal\RegApplPortal.Interfaces\RegApplPortal.Interfaces\bin\Debug\RegApplPortal.Entities.dll
+c:\VS\RegApplPortal\RegApplPortal.Interfaces\RegApplPortal.Interfaces\bin\Debug\RegApplPortal.Entities.pdb
+c:\VS\RegApplPortal\RegApplPortal.Interfaces\RegApplPortal.Interfaces\obj\Debug\RegApplPortal.Interfaces.csprojResolveAssemblyReference.cache
+c:\VS\RegApplPortal\RegApplPortal.Interfaces\RegApplPortal.Interfaces\obj\Debug\RegApplPortal.Interfaces.dll
+c:\VS\RegApplPortal\RegApplPortal.Interfaces\RegApplPortal.Interfaces\obj\Debug\RegApplPortal.Interfaces.pdb
