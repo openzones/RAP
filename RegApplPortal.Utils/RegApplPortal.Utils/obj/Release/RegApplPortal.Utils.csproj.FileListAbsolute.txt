@@ -1,0 +1,10 @@
+e:\RegApplPortal\RegApplPortal.Utils\RegApplPortal.Utils\bin\Release\RegApplPortal.Utils.dll
+e:\RegApplPortal\RegApplPortal.Utils\RegApplPortal.Utils\bin\Release\RegApplPortal.Utils.pdb
+e:\RegApplPortal\RegApplPortal.Utils\RegApplPortal.Utils\obj\Release\RegApplPortal.Utils.csprojResolveAssemblyReference.cache
+e:\RegApplPortal\RegApplPortal.Utils\RegApplPortal.Utils\obj\Release\RegApplPortal.Utils.dll
+e:\RegApplPortal\RegApplPortal.Utils\RegApplPortal.Utils\obj\Release\RegApplPortal.Utils.pdb
+c:\VS\RegApplPortal\RegApplPortal.Utils\RegApplPortal.Utils\bin\Release\RegApplPortal.Utils.dll
+c:\VS\RegApplPortal\RegApplPortal.Utils\RegApplPortal.Utils\bin\Release\RegApplPortal.Utils.pdb
+c:\VS\RegApplPortal\RegApplPortal.Utils\RegApplPortal.Utils\obj\Release\RegApplPortal.Utils.csprojResolveAssemblyReference.cache
+c:\VS\RegApplPortal\RegApplPortal.Utils\RegApplPortal.Utils\obj\Release\RegApplPortal.Utils.dll
+c:\VS\RegApplPortal\RegApplPortal.Utils\RegApplPortal.Utils\obj\Release\RegApplPortal.Utils.pdb
