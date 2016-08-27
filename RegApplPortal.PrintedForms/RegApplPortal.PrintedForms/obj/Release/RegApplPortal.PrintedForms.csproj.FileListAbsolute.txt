@@ -1,0 +1,13 @@
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\bin\Release\Templates\BaseReport.xlsx
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\bin\Release\RegApplPortal.PrintedForms.dll
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\bin\Release\RegApplPortal.PrintedForms.pdb
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\bin\Release\NPOI.dll
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\bin\Release\NPOI.OOXML.dll
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\bin\Release\NPOI.OpenXml4Net.dll
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\bin\Release\NPOI.OpenXmlFormats.dll
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\bin\Release\RegApplPortal.Entities.dll
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\bin\Release\RegApplPortal.Entities.pdb
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\obj\Release\RegApplPortal.PrintedForms.csprojResolveAssemblyReference.cache
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\obj\Release\RegApplPortal.PrintedForms.dll
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\obj\Release\RegApplPortal.PrintedForms.pdb

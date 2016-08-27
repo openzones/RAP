@@ -1,0 +1,13 @@
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\bin\Debug\RegApplPortal.PrintedForms.dll
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\bin\Debug\RegApplPortal.PrintedForms.pdb
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\bin\Debug\NPOI.dll
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\bin\Debug\NPOI.OOXML.dll
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\bin\Debug\NPOI.OpenXml4Net.dll
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\bin\Debug\NPOI.OpenXmlFormats.dll
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\bin\Debug\RegApplPortal.Entities.dll
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\bin\Debug\RegApplPortal.Entities.pdb
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\obj\Debug\RegApplPortal.PrintedForms.csprojResolveAssemblyReference.cache
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\obj\Debug\RegApplPortal.PrintedForms.dll
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\obj\Debug\RegApplPortal.PrintedForms.pdb
+C:\VS\RegApplPortal\RegApplPortal.PrintedForms\RegApplPortal.PrintedForms\bin\Debug\Templates\BaseReport.xlsx
