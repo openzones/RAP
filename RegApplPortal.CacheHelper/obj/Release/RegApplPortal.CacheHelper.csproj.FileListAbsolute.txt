@@ -1,0 +1,5 @@
+c:\VS\RegApplPortal\RegApplPortal.CacheHelper\bin\Release\RegApplPortal.CacheHelper.dll
+c:\VS\RegApplPortal\RegApplPortal.CacheHelper\bin\Release\RegApplPortal.CacheHelper.pdb
+c:\VS\RegApplPortal\RegApplPortal.CacheHelper\obj\Release\RegApplPortal.CacheHelper.csprojResolveAssemblyReference.cache
+c:\VS\RegApplPortal\RegApplPortal.CacheHelper\obj\Release\RegApplPortal.CacheHelper.dll
+c:\VS\RegApplPortal\RegApplPortal.CacheHelper\obj\Release\RegApplPortal.CacheHelper.pdb
