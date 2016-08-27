@@ -1,0 +1,66 @@
+﻿<div class="well">
+	<div ng-init="$ctrl.initialize()">
+		<div class="form-group">
+
+			<div class="btn-group btn-group-justified">
+				<div class="btn-group">
+					<button class="btn btn-default" id="select-files"
+							ng-click="$ctrl.select()"
+							ng-disabled="$ctrl.isDisabled || (!$ctrl.multiple && !!$ctrl.files.length)">
+						Выбрать файлы
+					</button>
+				</div>
+
+				<div class="btn-group" 
+					 ng-if="$ctrl.multiple">
+
+					<button class="btn btn-default"
+							ng-click="$ctrl.clean()"
+							ng-disabled="$ctrl.isDisabled">
+						Очистить
+					</button>
+				</div>
+
+				<div class="btn-group" ng-hide="!!$ctrl.hideButtons">
+					<button class="btn btn-default" id="upload-files"
+							ng-click="$ctrl.upload($event)"
+							ng-disabled="$ctrl.isDisabled || !$ctrl.files.length">
+						Загрузить
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="form-control text-center">
+				Выбрано файлов: {{$ctrl.files.length}}
+			</label>
+		</div>
+
+		<div ng-hide="true"
+			 ng-switch="!!$ctrl.multiple">
+
+			<input type="file" id="input-element" accept="{{$ctrl.extensions}}"
+				   ng-switch-when="false"
+				   ng-disabled="$ctrl.isDisabled" />
+
+			<input type="file" id="input-element" accept="{{$ctrl.extensions}}" multiple
+				   ng-switch-when="true"
+				   ng-disabled="$ctrl.isDisabled" />
+		</div>
+	</div>
+
+	<div class="form-group"
+		 ng-repeat="file in $ctrl.files">
+
+		<div>
+			<span>{{file.name}}</span>
+			<div style="float: right;">
+				<span>{{file.humanSize}}</span>
+				<a ng-click="$ctrl.remove(file)"><i class="glyphicon glyphicon-remove"></i></a>
+			</div>
+		</div>
+
+		<progress class="col-md-12" value="{{file.loaded}}" max="{{file.size}}"></progress>
+	</div>
+</div>

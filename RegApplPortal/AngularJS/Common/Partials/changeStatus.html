@@ -1,0 +1,121 @@
+﻿<div style="margin: auto 30px;" id="createModal">
+	<div class="modal-header">
+		<h3 ng-bind="::ctrl.departmentName"></h3>
+	</div>
+
+	<div class="modal-body">
+		<form class="col-md-12" name="statusForm" role="form">
+
+			<div class="row">
+				<div class="form-group col-md-3">
+					<label class="control-label">№ статуса</label>
+					<input type="text" class="form-control spinner"
+						   ng-model="ctrl.status.id"
+						   ng-disabled="true" />
+				</div>
+				<div class="form-group col-md-3">
+					<label class="control-label">Дата статуса</label>
+					<div>
+						<datepicker-popup model="ctrl.status.statusDate" disabled-state="true" />
+					</div>
+				</div>
+				<div class="form-group col-md-3">
+					<div>
+						<label class="control-label">Статус</label>
+						<validator check="ctrl.status.statusID" class="pull-right" />
+					</div>
+					<ui-select theme="bootstrap"
+								ng-model="ctrl.status.statusID"
+							    ng-change="ctrl.onChangeStatus()"
+								ng-disabled="ctrl.isReview()">
+
+						<ui-select-match allow-clear="true">
+							{{$select.selected.name}}
+						</ui-select-match>
+
+						<ui-select-choices repeat="item.id as item in (ctrl.statusList() | filter: {name: $select.search}) track by item.id">
+							<div ng-bind-html="item.name | highlight: $select.search"></div>
+						</ui-select-choices>
+					</ui-select>
+				</div>
+				<div class="form-group col-md-3">
+					<div>
+						<label class="control-label">Исполнить до</label>
+						<validator ng-if="ctrl.checkExecuteToDate(ctrl.status.statusID)" check="ctrl.status.executeToDate" class="pull-right" />
+					</div>
+					<div>
+						<datepicker-popup model="ctrl.status.executeToDate" disabled-state="ctrl.isReview() || ctrl.status.statusID == 3" />
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col-md-6">
+					<label class="control-label">Автор</label>
+
+					<ui-select theme="bootstrap"
+							   ng-model="ctrl.status.userID"
+							   ng-disabled="true">
+
+						<ui-select-match allow-clear="true">
+							{{$select.selected.fullname}}
+						</ui-select-match>
+
+						<ui-select-choices repeat="item.id as item in ctrl.users track by $index">
+							<div ng-bind-html="item.fullname | highlight: $select.search"></div>
+						</ui-select-choices>
+					</ui-select>
+
+				</div>
+				<div class="form-group col-md-6">
+					<div>
+						<label class="control-label">Назначена на</label>
+						<validator ng-if="ctrl.checkAssignedToUserID(ctrl.status.statusID)" check="ctrl.status.assignedToUserID" class="pull-right" />
+					</div>
+
+					<ui-select theme="bootstrap"
+							   ng-model="ctrl.status.assignedToUserID"
+							   ng-disabled="ctrl.isReview() || ctrl.isDisabledStatus || ctrl.status.statusID == 3">
+
+						<ui-select-match allow-clear="true">
+							{{$select.selected.fullname}}
+						</ui-select-match>
+
+						<ui-select-choices repeat="item.id as item in (ctrl.userList() | filter: {fullname: $select.search}) track by $index">
+							<div ng-bind-html="item.fullname | highlight: $select.search"></div>
+						</ui-select-choices>
+					</ui-select>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col-md-12">
+					<label class="control-label">Комментарий</label>
+					<textarea class="form-control" maxlength="2000" rows="5"
+							  ng-model="ctrl.status.comment"
+							  ng-disabled="ctrl.isReview()"></textarea>
+				</div>
+			</div>
+
+		</form>
+	</div>
+
+	<div class="modal-footer" style="overflow: auto;">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="btn-group btn-group-justified pull-right">
+				<div class="btn-group">
+					<button type="button" class="btn"
+							ng-bind="::ctrl.modalOptions.closeButtonText"
+							ng-click="ctrl.close()"></button>
+				</div>
+
+				<div class="btn-group">
+					<button class="btn btn-primary"
+							ng-bind="::ctrl.modalOptions.actionButtonText"
+							ng-click="ctrl.update()"
+							ng-disabled="!ctrl.validationComplete() || ctrl.isReview()"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
