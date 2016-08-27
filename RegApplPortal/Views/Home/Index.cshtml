@@ -1,0 +1,39 @@
+﻿@model RegApplPortal.WebApps.Models.ViewModels.JournalStatements
+@using Newtonsoft.Json;
+@using RegApplPortal.WebApps.Models.Core
+@{
+	ViewBag.Title = "Журнал";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section modules {
+	@Scripts.Render("~/bundles-js/home-journal-module")
+}
+
+@section scripts {
+	<script type="text/javascript">
+		var model = @Html.Raw(JsonConvert.SerializeObject(Model, UIConstants.DefaultJsonSerializerSettings));
+	</script>
+}
+
+
+<div ng-controller="journalStatementCtrl as journalCtrl">
+
+	<div ng-if="_errorMessage">
+		<h3 class="text-center">{{::_errorMessage}}</h3>
+	</div>
+
+	<div ng-if="!_errorMessage">
+		<div class="form-group">
+			<div class="btn-group">
+				<a href='@Url.Action("Statement", "Home")' class="btn btn-primary">Создать новое обращение</a>
+			</div>
+		</div>
+
+		<div class="gridStyle"
+			 ui-grid="journalCtrl.statementsGrid"
+			 ui-grid-resize-columns
+			 ui-grid-selection>
+		</div>
+	</div>
+</div>

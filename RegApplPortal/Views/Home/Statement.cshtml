@@ -1,0 +1,498 @@
+﻿@model RegApplPortal.WebApps.Models.ViewModels.StatementList
+@using Newtonsoft.Json;
+@using RegApplPortal.WebApps.Models.Core
+@{
+	ViewBag.Title = "Заявление";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section modules {
+	@Scripts.Render("~/bundles-js/home-statement-module")
+}
+
+@section scripts {
+	<script type="text/javascript">
+		var model = @Html.Raw(JsonConvert.SerializeObject(Model, UIConstants.DefaultJsonSerializerSettings));
+
+		$('.openall').toggle(!($('.panel-collapse.in').length > 0));
+		$('.closeall').toggle($('.panel-collapse.in').length > 0);		
+
+		function getCollapse() {			
+			if ($('.panel-collapse.in').length > 0) {
+				$('.panel-collapse.in')
+			  .collapse('hide');
+				$('.closeall').toggle(false);	
+				$('.openall').toggle(true);
+			} else {
+				$('.panel-collapse:not(".in")')
+			  .collapse('show');
+				$('.openall').toggle(false);
+				$('.closeall').toggle(true);	
+			}
+		}
+
+		$('.panel-heading').click(function(e) {
+			setTimeout(function() {			
+				if ($('.panel-collapse.in').length > 0) {
+					$('.closeall').toggle(true);	
+					$('.openall').toggle(false);
+				} else {
+					$('.openall').toggle(true);
+					$('.closeall').toggle(false);	
+				}			
+			}, 500);
+		});
+
+		$('.closeall').click(function(){
+			getCollapse();
+		});
+		$('.openall').click(function(){
+			getCollapse();
+		});
+	</script>
+}
+
+<div class="row">
+	<div class="form-group col-md-12">
+		<button type="button" class="btn btn-primary openall">Развернуть всё</button> 
+		<button type="button" class="btn btn-primary closeall">Свернуть всё</button>
+	</div>
+</div>
+
+<div ng-controller="statementCtrl as stCtrl" ng-cloak>
+	<div class="panel-group">		
+		@* Общая информация *@
+		<div class="panel panel-primary">
+			<div class="panel-heading" style="cursor: pointer;" data-toggle="collapse" data-target="#pnlInfo">Общая информация</div>
+			<div class="panel-collapse collapse in" id="pnlInfo">
+				<div class="panel-body">
+
+					<div class="row">
+						<div class="form-group col-md-4">
+							<label class="control-label col-md-8">Срок обработки</label>
+							<div class="col-md-4">
+								<div class="glyphicon glyphicon-certificate" ng-style="stCtrl.treatmentPeriod()"></div>  
+							</div>     
+						</div>
+						<div class="form-group col-md-4">
+							<label class="control-label col-md-8">Срок на ответственном</label>
+							<div class="col-md-4">
+								<div class="glyphicon glyphicon-certificate" ng-style="stCtrl.periodResponsible()"></div> 
+							</div> 
+						</div>
+						<div class="form-group col-md-4">
+							<div>
+								<label class="control-label">Причина обращения</label>
+								<validator ng-if="stCtrl.validationReasonID()" check="stCtrl.model.statement.reasonID" class="pull-right" />
+							</div>
+							<div>
+								<select-ui model="stCtrl.model.statement.reasonID" items-collection="stCtrl.directory.refReason" />
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col-md-4">
+							<label class="control-label">№ обращения</label>
+							<input type="text" class="form-control"
+							ng-model="stCtrl.model.statement.id"
+							ng-disabled="true" />
+						</div>
+						<div class="form-group col-md-4">
+							<label class="control-label">Дата создания</label>
+							<div>
+								<datepicker-popup model="stCtrl.model.statement.createDate" disabled-state="true" />
+							</div>
+						</div>
+						<div class="form-group col-md-4">
+							<div>
+								<label class="control-label">Дата инцидента</label>
+								<validator ng-if="stCtrl.model.statement.statementTypeID == 2" check="stCtrl.model.statement.incidentDate" class="pull-right" />
+							</div>
+							<datepicker-popup model="stCtrl.model.statement.incidentDate" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col-md-4">
+							<label class="control-label">Последний статус</label>
+							<div>
+								<select-ui model="stCtrl.model.statement.lastStatementStatusID"
+										   items-collection="stCtrl.directory.refStatus"
+										   disabled-state="true" />
+							</div>
+						</div>
+						<div class="form-group col-md-4">
+							<label class="control-label">Дата последнего статуса</label>
+							<datepicker-popup model="stCtrl.model.statement.lastStatusDate"
+											  disabled-state="true" />
+						</div>
+						<div class="form-group col-md-4">
+							<div>
+								<label class="control-label">Вид обращения</label>
+								<validator check="stCtrl.model.statement.statementTypeID" class="pull-right" />
+							</div>							
+							<div>
+								<select-ui model="stCtrl.model.statement.statementTypeID" items-collection="stCtrl.directory.refStatementType" />
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col-md-4">
+							<div>
+								<label class="control-label">Фамилия</label>
+								<validator ng-if="stCtrl.model.statement.statementTypeID == 2" check="stCtrl.model.statement.lastname" class="pull-right" />
+							</div>
+							<input type="text" class="form-control"
+								   ng-model="stCtrl.model.statement.lastname" />
+						</div>
+						<div class="form-group col-md-4">
+							<div>
+								<label class="control-label">Имя</label>
+								<validator ng-if="stCtrl.model.statement.statementTypeID == 2" check="stCtrl.model.statement.firstname" class="pull-right" />
+							</div>
+							<input type="text" class="form-control"
+								   ng-model="stCtrl.model.statement.firstname" />
+						</div>
+						<div class="form-group col-md-4">
+							<div>
+								<label class="control-label">Отчество</label>
+								<validator ng-if="stCtrl.model.statement.statementTypeID == 2" check="stCtrl.model.statement.secondname" class="pull-right" />
+							</div>
+							<input type="text" class="form-control"
+								   ng-model="stCtrl.model.statement.secondname" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col-md-4">
+							<div>
+								<label class="control-label">Дата рождения</label>
+								<validator ng-if="stCtrl.model.statement.statementTypeID == 2" check="stCtrl.model.statement.birthday" class="pull-right" />
+							</div>
+							<div>
+								<datepicker-popup model="stCtrl.model.statement.birthday" />
+							</div>
+						</div>
+						<div class="form-group col-md-4">
+							<div>
+								<label class="control-label">Телефон</label>
+								<validator ng-if="stCtrl.model.statement.statementTypeID == 2 || stCtrl.model.statement.phone" check="stCtrl.model.statement.phone" class="pull-right" />
+							</div>
+							<input type="text" class="form-control"
+								   ng-model="stCtrl.model.statement.phone"
+								   ui-mask="+7(999)-999-99-99"
+								   ng-pattern="/^((8|\+7)[\-\s]?)?(\(?\d{3}\)?[\-\s]?)?[\d\-\s]{7,10}$/" />
+						</div>
+						<div class="form-group col-md-4">
+							<label class="control-label">E-mail</label>
+							<input type="text" class="form-control"
+								   ng-model="stCtrl.model.statement.email" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col-md-4">
+							<label class="control-label">Куратор</label>
+
+							<ui-select theme="bootstrap"
+									   ng-model="stCtrl.model.statement.curatorID"
+									   ng-disabled="true">
+
+								<ui-select-match allow-clear="true">
+									{{$select.selected.fullname}}
+								</ui-select-match>
+
+								<ui-select-choices repeat="item.id as item in stCtrl.model.users track by $index">
+									<div ng-bind-html="item.fullname | highlight: $select.search"></div>
+								</ui-select-choices>
+							</ui-select>
+
+						</div>
+						<div class="form-group col-md-4">
+							<label class="control-label">Ответственный</label>
+
+							<ui-select theme="bootstrap"
+									   ng-model="stCtrl.model.statement.responsibleID"
+									   ng-disabled="true">
+
+								<ui-select-match allow-clear="true">
+									{{$select.selected.fullname}}
+								</ui-select-match>
+
+								<ui-select-choices repeat="item.id as item in stCtrl.model.users track by $index">
+									<div ng-bind-html="item.fullname | highlight: $select.search"></div>
+								</ui-select-choices>
+							</ui-select>
+
+						</div>
+						<div class="form-group col-md-4">
+							<label class="control-label">Исполнитель</label>
+
+							<ui-select theme="bootstrap"
+									   ng-model="stCtrl.model.statement.executiveID"
+									   ng-disabled="true">
+
+								<ui-select-match allow-clear="true">
+									{{$select.selected.fullname}}
+								</ui-select-match>
+
+								<ui-select-choices repeat="item.id as item in stCtrl.model.users track by $index">
+									<div ng-bind-html="item.fullname | highlight: $select.search"></div>
+								</ui-select-choices>
+							</ui-select>
+
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col-md-4">
+							<label class="control-label">Вид страхового документа</label>
+							<div>
+								<select-ui model="stCtrl.model.statement.medDocumentTypeID" items-collection="stCtrl.directory.refMedDocumentType" />
+							</div>
+						</div>
+						<div class="form-group col-md-4">
+							<div ng-if="stCtrl.model.statement.medDocumentTypeID == 5">
+								<div class="col-md-6">
+									<label class="control-label">Серия</label>
+								</div>
+								<div class="col-md-6">
+									<label class="control-label">Серия</label>
+								</div>
+							</div>
+							<div ng-if="stCtrl.model.statement.medDocumentTypeID != 5">
+								<label class="control-label">Серия и номер документа</label>
+							</div>
+							<div ng-if="stCtrl.model.statement.medDocumentTypeID == 5">
+								<div class="col-md-6">
+									<input type="text" class="form-control"
+										   ng-model="stCtrl.model.statement.Series"
+										   ui-mask="999999" />
+								</div>
+								<div class="col-md-6">
+									<input type="text" class="form-control"
+										   ng-model="stCtrl.model.statement.Number"
+										   ui-mask="9999999999" />
+								</div>
+							</div>
+							<div ng-if="stCtrl.model.statement.medDocumentTypeID != 5">
+								<input type="text" class="form-control" 
+									   ng-model="stCtrl.model.statement.unifiedPolicyNumber"
+									   ui-mask="{{stCtrl.validatorMedDocumentType(stCtrl.model.statement.medDocumentTypeID)}}"
+									   maxlength="50" />
+							</div>
+						</div>
+						<div class="form-group col-md-4">
+							<div>
+								<label class="control-label">Регион страхования</label>
+								<validator check="stCtrl.model.statement.subjectInsuranceID" class="pull-right" />
+							</div>
+							<div>
+								<select-ui model="stCtrl.model.statement.subjectInsuranceID" items-collection="stCtrl.directory.refSubjectInsurance" />
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col-md-4">
+							<label class="control-label">Населенный пункт</label>
+							<div>
+								<select-ui model="stCtrl.model.statement.localityID" items-collection="stCtrl.directory.refLocality" />
+							</div>
+						</div>
+						<div class="form-group col-md-4">
+							<div>
+								<label class="control-label">Канал поступления</label>
+								<validator check="stCtrl.model.statement.incomingChannelID" class="pull-right" />
+							</div>
+							<div>
+								<select-ui model="stCtrl.model.statement.incomingChannelID" items-collection="stCtrl.directory.refIncomingChannel" />
+							</div>
+						</div>
+						<div class="form-group col-md-4">
+							<div>
+								<label class="control-label">Формат экспертизы</label>
+								<validator ng-if="stCtrl.validationExpertiseID()" check="stCtrl.model.statement.expertiseID" class="pull-right" />
+							</div>
+							<div>
+								<select-ui model="stCtrl.model.statement.expertiseID" items-collection="stCtrl.directory.refExpertise" />
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col-md-12">
+							<div>
+								<label class="control-label">Описание</label>
+								<validator check="stCtrl.model.statement.description" class="pull-right" />
+							</div>
+							<textarea class="form-control" maxlength="2000" rows="5"
+									  ng-model="stCtrl.model.statement.description"></textarea>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col-md-12">
+							<button type="button" class="btn btn-primary pull-right col-md-3" 
+									ng-click="stCtrl.changeStatus()"
+									ng-disabled="!stCtrl.validationComplete()">
+								Сохранить
+							</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		@* История статусов *@
+		<div class="panel panel-primary">
+			<div class="panel-heading" style="cursor: pointer;" data-toggle="collapse" data-target="#pnlStatus">История статусов</div>
+			<div class="panel-collapse collapse" id="pnlStatus">
+				<div class="panel-body">
+
+					<div class="form-group">
+						<div id="resize" class="gridStyle"
+							 ui-grid="stCtrl.statusGrid"
+							 ui-grid-resize-columns
+							 ui-grid-auto-resize
+							 ui-grid-selection>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col-md-12">
+							<button type="button" class="btn btn-primary pull-right col-md-3" 
+									ng-click="stCtrl.addStatus()"
+									ng-disabled="stCtrl.blockButtons()">
+								Изменить статус
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		@* Файлы *@
+		<div class="panel panel-primary">
+			<div class="panel-heading" style="cursor: pointer;" data-toggle="collapse" data-target="#pnlFiles">Файлы</div>
+			<div class="panel-collapse collapse" id="pnlFiles">
+				<div class="panel-body">
+
+					<div class="form-group">
+						<div id="resize" class="gridStyle"
+							 ui-grid="stCtrl.fileGrid"
+							 ui-grid-resize-columns
+							 ui-grid-auto-resize
+							 ui-grid-selection>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col-md-12">
+							<button type="button" class="btn btn-primary pull-right col-md-3" 
+									ng-click="stCtrl.addFile()"
+									ng-disabled="stCtrl.blockButtons()">
+								Прикрепить файл
+							</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		@* Исполнение *@
+		<div class="panel panel-primary" ng-if="stCtrl.isShowExecution()">
+			<div class="panel-heading" style="cursor: pointer;" data-toggle="collapse" data-target="#pnlExecution">Исполнение</div>
+			<div class="panel-collapse collapse" id="pnlExecution">
+				<div class="panel-body">
+
+					<div class="row">
+						<div class="form-group col-md-4">
+							<label class="control-label col-md-4">Обоснованность</label>
+							<div class="col-md-4">
+								<input type="checkbox" class="col-md-4"
+									   ng-model="stCtrl.model.statement.execution.validity" />
+							</div>
+						</div>
+						<div class="form-group col-md-4">
+							<label class="control-label col-md-4">Судебная</label>
+							<div class="col-md-4">
+								<input type="checkbox" class="col-md-4"
+									   ng-model="stCtrl.model.statement.execution.judicial" />
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col-md-4">
+							<div>
+								<label class="control-label">Дата экспертизы</label>
+								<validator ng-if="stCtrl.model.statement.expertiseID" check="stCtrl.model.statement.execution.expertiseDate" class="pull-right" />
+							</div>
+							<div>
+								<datepicker-popup model="stCtrl.model.statement.execution.expertiseDate" />
+							</div>
+						</div>
+						<div class="form-group col-md-4">
+							<label class="control-label">Штраф</label>
+							<input type="text" class="form-control"
+								   ng-model="stCtrl.model.statement.execution.straf" />
+						</div>
+						<div class="form-group col-md-4">
+							<label class="control-label">Фин. санкции</label>
+							<input type="text" class="form-control"
+								   ng-model="stCtrl.model.statement.execution.financialSanctions" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col-md-4">
+							<label class="control-label">ЛПУ код</label>
+							<input type="text" class="form-control"
+								   ng-model="stCtrl.model.statement.execution.lpU_Code" />
+						</div>
+						<div class="form-group col-md-4">
+							<label class="control-label">ЛПУ наименование</label>
+							<input type="text" class="form-control"
+								   ng-model="stCtrl.model.statement.execution.lpU_Name" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col-md-12">
+							<label class="control-label">Описание</label>
+							<textarea class="form-control" maxlength="2000" rows="5"
+									  ng-model="stCtrl.model.statement.execution.descriptionExecution" ></textarea>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="form-group col-md-12">
+							<button type="button" class="btn btn-primary pull-right col-md-3"
+									ng-click="stCtrl.saveExecution()"
+									ng-disabled="!stCtrl.validationComplete()">
+								Сохранить
+							</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		@* История *@
+		<div class="panel panel-primary">
+			<div class="panel-heading" style="cursor: pointer;" data-toggle="collapse" data-target="#pnlHistory">История</div>
+			<div class="panel-collapse collapse" id="pnlHistory">
+				<div class="panel-body" ng-style="(processing) ? { 'opacity': '0.6', 'pointer-events': 'none' } : {};">
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

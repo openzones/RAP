@@ -1,0 +1,23 @@
+﻿@model RegApplPortal.WebApps.Models.PrintedForms.PrintedFormsModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row margined">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="clickable panel-title collapse in">Отчет по обращениям</h3>
+                    <span class="pull-right"><i class="glyphicon glyphicon-chevron-up"></i></span>
+                </div>
+                <div class="panel-body" >
+                    <div class="row margined">
+                        @Html.Partial("_BaseReport", Model.BaseReport)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

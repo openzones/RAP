@@ -1,0 +1,77 @@
+﻿@model RegApplPortal.WebApps.Models.PrintedForms.BaseReportModel
+@{
+    Layout = null;
+}
+
+@using (@Html.BeginForm("GetBaseReport", "PrintedForms"))
+{
+    <div class="margined row">
+        <div class="col-md-2">
+            @Html.LabelFor(model => Model.DateBaseReportFrom)
+        </div>
+        <div class="col-md-3">
+            @Html.TextBoxFor(model => model.DateBaseReportFrom, Model.DateBaseReportFrom.ToString("dd.MM.yyyy"), new { @class = "form-control datepicker", @id = "DateBaseReportFrom" })
+            @Html.ValidationMessageFor(model => Model.DateBaseReportFrom)
+            <script type="text/javascript">
+                $(function () {
+                    $('#DateBaseReportFrom').datepicker();
+                });
+            </script>
+        </div>
+        <div class="col-md-2">
+            @Html.LabelFor(model => Model.StatusID)
+        </div>
+        <div class="col-md-3">
+            @Html.DropDownListFor(model => model.StatusID, Model.Statuses, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="margined row">
+        <div class="col-md-2">
+            @Html.LabelFor(model => Model.DateBaseReportTo)
+        </div>
+        <div class="col-md-3">
+            @Html.TextBoxFor(model => model.DateBaseReportTo, Model.DateBaseReportTo.ToString("dd.MM.yyyy"), new { @class = "form-control datepicker", @id = "DateBaseReportTo" })
+            @Html.ValidationMessageFor(model => Model.DateBaseReportTo)
+            <script type="text/javascript">
+            $(function () {
+                $('#DateBaseReportTo').datepicker();
+            });
+            </script>
+        </div>
+    </div>
+    <div class="margined row">
+        <div class="col-md-2">
+            @Html.LabelFor(model => Model.BaseReportStatusDateFrom)
+        </div>
+        <div class="col-md-3">
+            @Html.TextBoxFor(model => model.BaseReportStatusDateFrom, String.Empty, new { @class = "form-control datepicker", @id = "BaseReportStatusDateFrom" })
+            @Html.ValidationMessageFor(model => Model.BaseReportStatusDateFrom)
+            <script type="text/javascript">
+                $(function () {
+                    $('#BaseReportStatusDateFrom').datepicker();
+                });
+            </script>
+        </div>
+    </div>
+    <div class="margined row">
+        <div class="col-md-2">
+            @Html.LabelFor(model => Model.BaseReportStatusDateTo)
+        </div>
+        <div class="col-md-3">
+            @Html.TextBoxFor(model => model.BaseReportStatusDateTo, String.Empty, new { @class = "form-control datepicker", @id = "BaseReportStatusDateTo" })
+            @Html.ValidationMessageFor(model => Model.BaseReportStatusDateTo)
+            <script type="text/javascript">
+            $(function () {
+                $('#BaseReportStatusDateTo').datepicker();
+            });
+            </script>
+        </div>
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-3">
+            <input class="btn btn-default"
+                   type="submit"
+                   value="Печать" />
+        </div>
+    </div>
+}
