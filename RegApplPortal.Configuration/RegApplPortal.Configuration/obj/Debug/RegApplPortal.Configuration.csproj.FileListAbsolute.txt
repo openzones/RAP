@@ -1,0 +1,8 @@
+e:\RegApplPortal\RegApplPortal.Configuration\RegApplPortal.Configuration\bin\Debug\RegApplPortal.Configuration.dll
+e:\RegApplPortal\RegApplPortal.Configuration\RegApplPortal.Configuration\bin\Debug\RegApplPortal.Configuration.pdb
+e:\RegApplPortal\RegApplPortal.Configuration\RegApplPortal.Configuration\obj\Debug\RegApplPortal.Configuration.dll
+e:\RegApplPortal\RegApplPortal.Configuration\RegApplPortal.Configuration\obj\Debug\RegApplPortal.Configuration.pdb
+c:\VS\RegApplPortal\RegApplPortal.Configuration\RegApplPortal.Configuration\bin\Debug\RegApplPortal.Configuration.dll
+c:\VS\RegApplPortal\RegApplPortal.Configuration\RegApplPortal.Configuration\bin\Debug\RegApplPortal.Configuration.pdb
+c:\VS\RegApplPortal\RegApplPortal.Configuration\RegApplPortal.Configuration\obj\Debug\RegApplPortal.Configuration.dll
+c:\VS\RegApplPortal\RegApplPortal.Configuration\RegApplPortal.Configuration\obj\Debug\RegApplPortal.Configuration.pdb

@@ -1,0 +1,10 @@
+e:\RegApplPortal\RegApplPortal.Configuration\RegApplPortal.Configuration\bin\Release\RegApplPortal.Configuration.dll
+e:\RegApplPortal\RegApplPortal.Configuration\RegApplPortal.Configuration\bin\Release\RegApplPortal.Configuration.pdb
+e:\RegApplPortal\RegApplPortal.Configuration\RegApplPortal.Configuration\obj\Release\RegApplPortal.Configuration.csprojResolveAssemblyReference.cache
+e:\RegApplPortal\RegApplPortal.Configuration\RegApplPortal.Configuration\obj\Release\RegApplPortal.Configuration.dll
+e:\RegApplPortal\RegApplPortal.Configuration\RegApplPortal.Configuration\obj\Release\RegApplPortal.Configuration.pdb
+c:\VS\RegApplPortal\RegApplPortal.Configuration\RegApplPortal.Configuration\bin\Release\RegApplPortal.Configuration.dll
+c:\VS\RegApplPortal\RegApplPortal.Configuration\RegApplPortal.Configuration\bin\Release\RegApplPortal.Configuration.pdb
+c:\VS\RegApplPortal\RegApplPortal.Configuration\RegApplPortal.Configuration\obj\Release\RegApplPortal.Configuration.csprojResolveAssemblyReference.cache
+c:\VS\RegApplPortal\RegApplPortal.Configuration\RegApplPortal.Configuration\obj\Release\RegApplPortal.Configuration.dll
+c:\VS\RegApplPortal\RegApplPortal.Configuration\RegApplPortal.Configuration\obj\Release\RegApplPortal.Configuration.pdb
